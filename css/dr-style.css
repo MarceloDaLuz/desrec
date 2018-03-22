@@ -58,6 +58,30 @@ li{
 /* carousel*/
 
 .carousel-item-add{
-    background-color: rgba(72,212,53,0.8);
+    background-color: rgba(255, 255, 255, 0.342);
     border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-left: 6px solid rgba(31,64,227,0.8);
+}
+
+/* footer*/
+.black-box{
+    background-color: black;
+}
+
+.link-reference{
+    padding:0.5rem;
+}
+    .link-reference:hover{
+        color:black;
+        text-decoration-style: none;
+        text-decoration: black;
+    }
+
+/* SVG*/
+.svg-icon{
+    width: 24px;
+    height: 24px;
+    margin: -6px;
+    padding-left:0.1rem; 
 }
