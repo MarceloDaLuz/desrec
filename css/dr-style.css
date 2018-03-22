@@ -55,3 +55,9 @@ li{
     padding-top: 10rem;
 }
 
+/* carousel*/
+
+.carousel-item-add{
+    background-color: rgba(72,212,53,0.8);
+    border-top-right-radius: 17px;
+}
