@@ -1,0 +1,57 @@
+/* fontes do google*/
+.oswald-font{
+    font-family: 'Oswald', sans-serif;
+}
+.pt-sans-font{
+    font-family: 'PT Sans', sans-serif;
+}
+.ubuntu-font{
+    font-family: 'Ubuntu', sans-serif;
+}
+.titillium-web-font{
+    font-family: 'Titillium Web', sans-serif;
+}
+.fira-sans-condensed-font{
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+.coda-caption-font{
+    font-family: 'Coda Caption', sans-serif;
+}
+.hammarsmith-one-font{
+    font-family: 'Coda Caption', sans-serif;
+}
+
+/* barra de navegação*/
+.navbar-default-setting{
+    background-color:rgba(255,255,255, 0.8);
+}
+
+a{
+    color:black;    
+    font-style: unset;
+    font-size: larger;
+}
+    a:hover{
+        color:white;
+    }
+.brand-title{
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 0rem;
+    margin:1px;
+}
+
+li{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+} 
+
+/* main*/
+.main-content{
+    /*margin-top:10rem;*/
+    background-color:rgb(208,225,207);
+    font-weight: bolder;
+    border-bottom: 17px;
+    padding-top: 10rem;
+}
+
