@@ -33,9 +33,11 @@
                 <ul class="navbar-nav">
                     <!-- precisa-se de um padding-->
                     <!-- verificar se o usuario esta logado, caso esteja, esconder o botão de cadastre-se -->
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary" href="#">Cadastre-se</a>
                     </li>
+                    -->
                     <li class="nav-item">
                         <a class="nav-link btn btn-success" href="#">Entrar</a>
                     </li>

@@ -30,7 +30,8 @@ html, body{
 
 /* barra de navegação*/
 .navbar-default-setting{
-    background-color:rgba(255,255,255, 0.8);
+    background-color: rgba(245,246,245,0.8);
+    /*background-color:rgba(255,255,255, 0.8);*/
 }
 
 a{
@@ -76,8 +77,9 @@ footer{
     bottom: 0;
     width: 100%;
 }
-.black-box{
-    background-color: black;
+.green-box{
+    background-color:rgb(60,216,39);
+    width: 100%;
 }
 
 .link-reference{
@@ -96,4 +98,10 @@ footer{
     height: 24px;
     margin: -6px;
     padding-left:0.1rem; 
+}
+
+/* CARD*/
+
+.dr-card{
+    margin-bottom: 1rem;
 }
