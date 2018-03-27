@@ -1,2 +1,2 @@
 <?php   
-    mysqli_connect('localhost','root','','DBdesrec');
+    $conn = mysqli_connect('localhost','root','','DBdesrec');
