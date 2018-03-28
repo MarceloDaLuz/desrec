@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-default-setting pt-sans-font">
-            <a class="navbar-brand brand-title">
+            <a href="./index.php" class="navbar-brand brand-title">
                 <!-- Brand-->
                 <img src="./img/recycle.svg" width="48px" height="48px"> Destino Reciclável
             </a>

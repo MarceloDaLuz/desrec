@@ -16,6 +16,7 @@
     <div class="container">
         <main class="main-content">
             <?php include("card.php");?>
+            <?php include("card.php");?>
         </main>
         <?php include("footer.php");?>
     </div>
