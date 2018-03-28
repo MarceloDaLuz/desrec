@@ -73,7 +73,7 @@ li{
 
 /* footer*/
 footer{
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
@@ -104,4 +104,15 @@ footer{
 
 .dr-card{
     margin-bottom: 1rem;
+    width: 33%;
+    border-color: rgba(6,62,4,0.8);
+    background-color: rgb(240,243,239);
+    
+}
+
+.dr-content-card{
+    text-align: center;
+}
+.dr-btn-card{
+    float:right;
 }

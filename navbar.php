@@ -11,10 +11,10 @@
                 <ul class="navbar-nav">
                     <!-- Abas-->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="./index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Colete</a>
+                        <a class="nav-link" href="./colete.php">Colete</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Descarte</a>
