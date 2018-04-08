@@ -10,8 +10,8 @@ class Categorias extends CI_Controller{
 
         array_push($categorias, $papel, $metal);
 
-        $dados = array("categorias" =>  $categorias);
+        $datas = array("categorias" =>  $categorias);
 
-        $this->load->view("categorias/index.php",$dados);
+        $this->load->view('categorias/index.php',$datas);
     }
 } 
