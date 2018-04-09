@@ -6,15 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
         <script src="main.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
     </head>
     <body>
-        <table>
-            <h1>Categorias:</h1>
-        <?php foreach($dados as $categoria):?>
-            <tr>
-                <td><?=$categoria["nome"]?></td>
-            </tr>
-        <?php endforeach?>
-        </table>
+        <div class="container">
+            <h1 style="text-align:center">Categorias:</h1>
+
+            <table class="table table-dark">
+                <?php foreach ($categorias as $c) :?>
+                <tr>
+                    <td><?=$c["nome"]?></td>
+                </tr>
+                <?php endforeach?>
+            </table>
+        </div>
+        
+        
     </body>
 </html>
