@@ -1,4 +1,4 @@
-<?php
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
     defined('BASEPATH') OR exit('No direct script access allowed');
     class Usuario extends CI_Controller{
         public function novo(){
@@ -9,9 +9,10 @@
                 "ENDERECO"=>$this->input->post("endereco"),
                 "cpf"=>$this->input->post("cpf")
             );
-            $this->load->database();
+            /*$this->load->database();*/
             $this->load->model("usuario_model");
             $this->usuario_model->salvar($user);
             $this->load->view("paginas/usuario/novo");
         }
+        
     }
