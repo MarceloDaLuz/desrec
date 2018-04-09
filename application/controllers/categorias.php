@@ -2,14 +2,10 @@
 class Categorias extends CI_Controller{
         
     public function index(){
-        $categorias = array();
         
-        $papel = array("nome" => "Papel","descricao" => "Material feito de papel");
-
-        $metal = array("nome" => "Metal","descricao" => "Material feito de Metal");
-
-        array_push($categorias, $papel, $metal);
-
+        $this->load->database();
+        $this->load->model("categorias_model");
+        $categorias = $this->categorias_model->buscarCategoria();
         $datas = array("categorias" =>  $categorias);
 
         $this->load->view('categorias/index.php',$datas);
