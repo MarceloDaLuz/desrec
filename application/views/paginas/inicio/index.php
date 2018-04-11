@@ -20,8 +20,6 @@
 
 <body>
     <div class="dr-body">
-
-    
         <header>
             <!--
                 <div>
@@ -137,15 +135,13 @@
             
                 
             </div>
-            <main class="main-content">
+             <main class="main-content">
                     <?php include("card.php");?>
                     <?php include("card.php");?>
-            </main>
+            </main> 
             <footer>
                 <div class="row">
-                    <div class="col green-box">
-            
-                    </div>
+                    <div class="col green-box"></div>
                     <div class="col">
                         <a href="#" class="link-reference">
                             <svg class="svg-icon" viewBox="0 0 24 24">
@@ -170,10 +166,8 @@
                         </a>
                     </div>
                 </div>
-            
             </footer>
         </div>
-        
     </div>
 
     <!-- <script>

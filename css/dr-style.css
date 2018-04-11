@@ -59,20 +59,20 @@ li{
 .dr-body{
     min-height: 100%;
     position: relative;
+    overflow: hidden;
 }
 /* main*/
 .main-content{
     min-height: 100%;
     margin-top:3rem;
     padding-top: 7rem;
-    overflow: hidden;
+    padding-bottom: 3rem;
 }
 
 .dr-form-body{
     background-color: rgba(27, 255, 149, 0.63);
     border-top: rgb(5,127,62) solid;
     border-radius: 0.8rem;
-
     padding-top: 2rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -100,11 +100,9 @@ li{
 
 /* footer*/
 footer{
-    height: 60px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    min-height: 100px
 }
 .green-box{
     background-color:rgb(60,216,39);
