@@ -126,8 +126,8 @@
                 
             <?php endif?>
         </header>
-        <div class="container main-content">
-            <h1 style="text-align:center">Categorias</h1>
+        <div class="container">
+            <h1 class="dr-title-h1">Categorias</h1>
             <div class="dr-form-body">
                 <table class="table">
                     <?php foreach ($categorias as $c) :?>

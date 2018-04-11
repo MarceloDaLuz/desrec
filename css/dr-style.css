@@ -66,13 +66,25 @@ li{
 }
 
 .dr-form-body{
-    background-color: green;
-    padding-top: 5rem;
+    background-color: rgba(27, 255, 149, 0.63);
+    border-top: rgb(5,127,62) solid;
+    border-radius: 0.8rem;
+
+    padding-top: 2rem;
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 2rem;
     margin-left: 20rem;
     margin-right: 20rem;
+    margin-bottom:3rem;
+}
+
+/* titles*/
+    /*h1*/
+.dr-title-h1{
+    margin-top:0.2em;
+    font-size: 5rem;
+    text-align: center;
 }
 /* carousel*/
 

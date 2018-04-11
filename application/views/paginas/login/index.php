@@ -137,10 +137,10 @@
                         
                         echo form_open("perfil/autenticar");
                             echo form_label("E-mail","email");
-                            echo form_input(array("name"=>"email","id"=>"email","class"=>"form-group","maxlength"=>"200"));
+                            echo form_input(array("name"=>"email","id"=>"email","class"=>"form-control","maxlength"=>"200"));
                                 echo "<br>";
                             echo form_label("Senha","senha");
-                            echo form_password(array("name"=>"senha","id"=>"senha","class"=>"form-group","maxlength"=>"15"));
+                            echo form_password(array("name"=>"senha","id"=>"senha","class"=>"form-control","maxlength"=>"15"));
                                 echo "<br>";
                             echo form_button(array("class"=>"btn btn-primary","content"=>"Entrar","type"=>"submit"));
                         echo form_close();
