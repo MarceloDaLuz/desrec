@@ -1,8 +1,6 @@
-*{
-    margin:0;
-    padding: 0;
-}
 html, body{
+    margin:0;
+    padding:0;
     height: 100%;
 }
 /* fontes do google*/
@@ -53,14 +51,18 @@ li{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 } 
+/* body site*/
 
+.dr-body{
+    min-height: 100%;
+    position: relative;
+}
 /* main*/
 .main-content{
-    /*margin-top:10rem;*/
-    padding-top: 10rem;
-    position: relative;
     min-height: 100%;
-    padding-bottom: 90px;
+    margin-top:3rem;
+    padding-top: 7rem;
+    overflow: hidden;
 }
 
 /* carousel*/
@@ -74,11 +76,11 @@ li{
 
 /* footer*/
 footer{
-    position: relative;
-    height:60px;
-    bottom: 0px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-
+    min-height: 100px
 }
 .green-box{
     background-color:rgb(60,216,39);
@@ -122,3 +124,4 @@ footer{
 .dr-btn-card{
     float:right;
 }
+

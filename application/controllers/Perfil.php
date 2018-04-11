@@ -2,20 +2,25 @@
 
 class Perfil extends CI_Controller{
 
+    /* metodo para autenticar login, usando email e senha*/
     public function autenticar()
         {
             $this->load->model("usuario_model");
 
             /*pega as informações da pagina login */
                 $email = $this->input->post("email");
-                /*$password = md5($this->input->post("senha")); */
+            /*$password = md5($this->input->post("senha")); */
                 $password = $this->input->post("senha");
             $user = $this->usuario_model->autenticarEmailESenha($email,$password);
             if($user){
-                $dados = array("mensagem"=>"logado com sucesso!");
+                $this->session->set_userdata("usuario_logado",$user);
+                $this->session->set_flashdata("status","Logado com sucesso!");
+                redirect('/');
             }else{
-                $dados = array("mensagem"=> "email ou senha invalida");
+                $this->session->set_flashdata("status","E-mail ou senha invalido!");
+                redirect('/');
             }
-            $this->load->view("paginas/perfil/autenticado",$dados);
+            
         }
+
 }
