@@ -3,6 +3,9 @@ html, body{
     padding:0;
     height: 100%;
 }
+body{
+    background-color: rgb(203,231,159);
+}
 /* fontes do google*/
 .oswald-font{
     font-family: 'Oswald', sans-serif;
