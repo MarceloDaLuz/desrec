@@ -135,7 +135,7 @@
             
                 
             </div>
-             <main class="main-content">
+            <main class="main-content">
                     <?php include("card.php");?>
                     <?php include("card.php");?>
             </main> 

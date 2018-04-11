@@ -6,4 +6,4 @@
                 <p class="card-text dr-content-card">Descrição sobre o material!</p>    
                 <a href="#" class="btn btn-link card-link dr-btn-card">Acessar card(Detalhes)</a>
             </div>
-            </div>
+</div>
