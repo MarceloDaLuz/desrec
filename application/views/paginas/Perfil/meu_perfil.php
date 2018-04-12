@@ -128,19 +128,21 @@
                 
             <?php endif?>
         </header>
-    
-        <?php 
-        if($this->session->userdata("usuario_logado"))
-        {
-            ?><p><?=$this->session->flashdata("status-success")?></p>
-        <?php
-        }
-        else
-        {
-            ?><p> <?=$this->session->flashdata("status-failed")?></p>
-        <?php
-        }
-        ?>
+        <div class="dr-form-body">
+            <!-- deve exibir nome do usuario e os produtos vinculados a ele-->
+            <?php 
+            if($this->session->userdata("usuario_logado"))
+            {
+                ?><p><?=$this->session->flashdata("status-success")?></p>
+            <?php
+            }
+            else
+            {
+                ?><p> <?=$this->session->flashdata("status-failed")?></p>
+            <?php
+            }
+            ?>
+        </div>
     <div>
     
     
