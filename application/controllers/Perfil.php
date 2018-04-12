@@ -2,7 +2,9 @@
 
 class Perfil extends CI_Controller{
     /* metodo para autenticar login, usando email e senha*/
-    
+    public function index(){
+        $this->load->view('/paginas/Perfil/meu_perfil.php');
+    }
     public function autenticar()
         {
             $this->load->model("usuario_model");
@@ -15,10 +17,10 @@ class Perfil extends CI_Controller{
             if($user){
                 $this->session->set_userdata("usuario_logado",$user);
                 $this->session->set_flashdata("status-success","Logado com sucesso!");
-                redirect("paginas/perfil/autenticado.php");
+                $this->load->view('paginas/Perfil/meu_perfil');
             }else{
                 $this->session->set_flashdata("status-failed","E-mail ou senha invalido!");
-                redirect('/');
+                $this->load->view('paginas/Perfil/meu_perfil');
             }
             
         }
@@ -28,5 +30,5 @@ class Perfil extends CI_Controller{
         $this->session->unset_userdata("usuario_logado");
         redirect('/');
     }
-
+    
 }

@@ -18,7 +18,7 @@
 </head>
     <body>
         <div class="dr-body">
-            <header>
+        <header>
             <!--
                 <div>
                     flexbox que vai ser usada para logo, caso não fique bom será usado brand
@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="<?=base_url('index.php/categorias')?>">Categorias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Descarte</a>
+                                <a class="nav-link" href="<?=base_url('index.php/descarte')?>">Descarte</a>
                             </li>
                         </ul>
                         <form class=" navbar form-inline my-2 my-lg-0">
@@ -95,7 +95,7 @@
                                 <a class="nav-link" href="<?=base_url('index.php/categorias')?>">Categorias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Descarte</a>
+                                <a class="nav-link" href="<?=base_url('index.php/descarte')?>">Descarte</a>
                             </li>
                         </ul>
                         <form class=" navbar form-inline my-2 my-lg-0">

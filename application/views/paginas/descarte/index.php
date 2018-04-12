@@ -1,3 +1,14 @@
+<!-- 
+    ++PAGINAS PARA EXIBIR OS OBJETOS
+    ++SE O USUARIO ESTIVER LOGADO DEVE TER OPÇÃO DE COLETA!!!!!!!!!!!
+    ++QUALQUER USUARIO PODE VER OS PRODUTOS!!!!!!!
+    ++SE NÃO LOGADO, DEVE-SE OFERTAR OPÇÕES DE LOGIN OU CADASTRO!!!! 
+
+    +++> USAR OS CARDS
+
+
+-->
+
 <html>
 
 <head>
@@ -129,11 +140,8 @@
             <?php endif?>
         </header>
         <div class="container">
-            <div class="jumbotron main-content">
-                <h1 class="display-4">Bem vindo!</h1>
-                <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum congue dolor vitae eleifend. Duis finibus, nisl a lobortis sodales, nisi justo cursus magna, et efficitur risus justo eget eros. Etiam convallis leo orci, in rutrum justo accumsan sed. Maecenas nulla justo, rhoncus et felis vitae, mattis pulvinar neque. Maecenas aliquet tellus ut ipsum laoreet volutpat. Donec aliquet est sed urna aliquam, ac gravida est fringilla. Ut commodo, metus eget tincidunt pretium, justo nulla hendrerit dui, et finibus mi diam vel turpis. Mauris vulputate nunc nec augue commodo, ut auctor ex placerat. Aliquam erat volutpat. Etiam in magna ut enim ultricies aliquam quis at libero. </p>
-            
-                
+            <div class="main-content">
+                <?php include 'card.php'?>
             </div>
             <footer>
                 <div class="row">
