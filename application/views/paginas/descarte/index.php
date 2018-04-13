@@ -17,117 +17,20 @@
 
 <body>
     <div class="dr-body">
-        <header>
-            <!--
-                <div>
-                    flexbox que vai ser usada para logo, caso não fique bom será usado brand
-                </div>
-            -->
-            <?php if(!$this->session->userdata("usuario_logado")):?>
-                <nav class="navbar navbar-expand-lg navbar-default-setting pt-sans-font">
-                    <a href="<?= base_url('/')?>" class="navbar-brand brand-title">
-                        <!-- Brand-->
-                        <img src="<?=base_url("./img/recycle.svg")?>" width="48px" height="48px"> Destino Reciclável
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <!-- Abas-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url('/')?>">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url('index.php/categorias')?>">Categorias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url('index.php/descarte')?>">Descarte</a>
-                            </li>
-                        </ul>
-                        <form class=" navbar form-inline my-2 my-lg-0">
-                            <!-- Barra de pesquisa-->
-                            <div class="input-group mr-sm-2">
-                                <input class="form-control" type="search" placeholder="Encontre um produto!" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-                                </div>
-                            </div>
-
-                        </form>
-                        <ul class="navbar-nav">
-                            <!-- precisa-se de um padding-->
-                            <!-- verificar se o usuario esta logado, caso esteja, esconder o botão de cadastre-se -->
-                            <!--
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-primary" href="#">Cadastre-se</a>
-                            </li>
-                            -->
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-success" href="<?=base_url('index.php/login')?>">Entrar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-success" href="<?= base_url('index.php/cadastro')?>">Cadastrar-se</a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </nav>
-            <?php else:?>
-                <nav class="navbar navbar-expand-lg navbar-default-setting pt-sans-font">
-                    <a href="<?= base_url('/')?>" class="navbar-brand brand-title">
-                        <!-- Brand-->
-                        <img src="<?=base_url("./img/recycle.svg")?>" width="48px" height="48px"> Destino Reciclável
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <!-- Abas-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url('/')?>">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url('index.php/categorias')?>">Categorias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url('index.php/descarte')?>">Descarte</a>
-                            </li>
-                        </ul>
-                        <form class=" navbar form-inline my-2 my-lg-0">
-                            <!-- Barra de pesquisa-->
-                            <div class="input-group mr-sm-2">
-                                <input class="form-control" type="search" placeholder="Encontre um produto!" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-                                </div>
-                            </div>
-
-                        </form>
-                        <ul class="navbar-nav">
-                            <!-- precisa-se de um padding-->
-                            <!-- verificar se o usuario esta logado, caso esteja, esconder o botão de cadastre-se -->
-                            <!--
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-primary" href="#">Cadastre-se</a>
-                            </li>
-                            -->
-                            <li class="nav-item">
-                                <?=anchor('Perfil/deslogar','Deslogar','btn btn-danger')?>
-                            </li>
-                        </ul>
-
-                    </div>
-                </nav>
-                
-            <?php endif?>
-        </header>
         <div class="container">
-            <div class="main-content">
-                <?php include 'card.php'?>
+            <!-- fazer um foreach -->
+            <div class="card dr-card">
+                <div class="card-body">
+                    <!-- nome do objeto -->
+                    <h5 class="card-title">Material </h5>
+                    <hr>
+                        <!-- nome do dona vinculado ao objeto -->
+                        <h6 class="card-subtitle mb-2 text-muted"><i>Doador</i></h6>
+                            <!-- descricao do objeto -->
+                            <p class="card-text dr-content-card">Descrição sobre o material!</p>    
+                                <!-- link para pagina detalhada do produto -->
+                                <a href="#" class="btn btn-link card-link dr-btn-card">Acessar card(Detalhes)</a>
+                </div>
             </div>
             <footer>
                 <div class="row">
@@ -159,11 +62,6 @@
             </footer>
         </div>
     </div>
-
-    <!-- <script>
-        $('.carousel').carousel()
-    </script> -->
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     

@@ -17,6 +17,7 @@
             $new_user = $this->usuario_model->autenticarEmailESenha($user['email'],$user['senha']);
             $this->session->set_userdata("usuario_logado",$new_user);
             $this->load->view('paginas/head');
+            $this->load->view('paginas/navbar');
             $this->load->view("paginas/usuario/novo");
         }
 
