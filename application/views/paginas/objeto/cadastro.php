@@ -29,11 +29,10 @@
                     ));
                     echo "<br>";
                     echo form_label("Descrição","descricao");
-                    echo form_input(array(
-                        "name" => "descricao",
-                        "class"=>"form-control",
-                        "maxlength"=> "200",
-                        "id"=>"descricao"
+                    echo form_textarea(array(
+                    "name" => "descricao",
+                    "class" => "form-control",
+                    "id" => "descricao",
                     ));
                     echo "<br>";
                     echo form_label("Valor","valor");

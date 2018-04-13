@@ -91,14 +91,15 @@
                         <ul class="navbar-nav">
                             <!-- precisa-se de um padding-->
                             <!-- verificar se o usuario esta logado, caso esteja, esconder o botão de cadastre-se -->
-                            <!--
+                            
                             <li class="nav-item">
-                                <a class="nav-link btn btn-primary" href="#">Cadastre-se</a>
+                                <?=anchor('Perfil/autenticado','Meu Perfil',array('class'=>'btn btn-primary'))?>
                             </li>
-                            -->
                             <li class="nav-item">
-                                <?=anchor('Perfil/deslogar','Deslogar','btn btn-danger')?>
+                                <?=anchor('Perfil/deslogar','Deslogar',array('class'=>'btn btn-danger'))?>
                             </li>
+                            
+
                         </ul>
 
                     </div>

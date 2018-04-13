@@ -4,6 +4,7 @@
     <title>Destino Reciclável - Login</title>
 </head>
     <body>
+        <!-- header-->
         <!-- verificando se o usuario esta logado-->
         <div class="dr-body">
         <div class="container main-content">
@@ -28,6 +29,7 @@
                     }   
                 ?>
             </div>
+            <!-- footer-->
             <footer>
                 <div class="row">
                     <div class="col green-box"></div>

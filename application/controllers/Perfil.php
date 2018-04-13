@@ -19,7 +19,7 @@ class Perfil extends CI_Controller{
             if($user){
                 $this->session->set_userdata("usuario_logado",$user);
                 $this->session->set_flashdata("status-success","Logado com sucesso!");
-                redirect('Perfil/autenticado');
+                redirect('Perfil/autenticado',$user);
             }else{
                 $this->session->set_flashdata("status-failed","E-mail ou senha invalido!");
                 redirect('/');
