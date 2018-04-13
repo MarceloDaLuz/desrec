@@ -7,6 +7,7 @@ class Categorias extends CI_Controller{
         $this->load->model("categorias_model");
         $categorias = $this->categorias_model->buscarCategoria();
         $datas = array("categorias" =>  $categorias);
+        $this->load->view('paginas/head');
         $this->load->view('paginas/categorias/index.php',$datas);
     }
 } 
