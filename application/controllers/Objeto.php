@@ -15,6 +15,19 @@ class Objeto extends CI_Controller{
         $this->load->view('paginas/Objeto/cadastro.php');
     }
 
+    public function mostrar(){
+        /* Exibir pagina para mostrar o objeto, detalhadamente ------------ qualquer usuario pode usar acessar! */
+        /* Leitura do model objeto */
+        $this->load->model("objeto_model");
+        /* Busca do objeto pelo id QUE É PASSADO PELO GET-URL */
+        $id= $this->input->get("id");
+        $objeto = $this->objeto_model->buscarObjetoPorID($id);
+        $dados = array("objeto"=>$objeto);
+        $this->load->view('paginas/head');
+        $this->load->view('paginas/navbar');
+        $this->load->view('paginas/Objeto/mostra.php',$dados);
+
+    }
     /* SALVAR OBJETO NO BANCO */
     public function novo(){
         /* pega o usuario logado */

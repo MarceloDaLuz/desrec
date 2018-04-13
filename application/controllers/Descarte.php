@@ -2,8 +2,11 @@
 
 class Descarte extends CI_Controller{
     public function index(){
+        $this->load->model("objeto_model");
+        $objetos = $this->objeto_model->buscarObjeto();
+        $datas= array("objetos"=> $objetos);
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
-        $this->load->view('paginas/descarte/index.php');
+        $this->load->view('paginas/descarte/index.php',$datas);
     }
 }

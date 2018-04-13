@@ -19,19 +19,23 @@
     <div class="dr-body">
         <div class="container">
             <!-- fazer um foreach -->
-            <div class="card dr-card">
-                <div class="card-body">
-                    <!-- nome do objeto -->
-                    <h5 class="card-title">Material </h5>
-                    <hr>
-                        <!-- nome do dona vinculado ao objeto -->
-                        <h6 class="card-subtitle mb-2 text-muted"><i>Doador</i></h6>
-                            <!-- descricao do objeto -->
-                            <p class="card-text dr-content-card">Descrição sobre o material!</p>    
-                                <!-- link para pagina detalhada do produto -->
-                                <a href="#" class="btn btn-link card-link dr-btn-card">Acessar card(Detalhes)</a>
+            <?php foreach($objetos as $o):?>
+                <div class="card dr-card">
+                    <div class="card-body">
+                        <!-- nome do objeto -->
+                        <h5 class="card-title"><?=$o["NOME"]?></h5>
+                        <hr>
+                            <!-- nome do dono vinculado ao objeto -->
+                            
+                            <h6 class="card-subtitle mb-2 text-muted"><i><?=$o["usuario_id"]?></i></h6>
+                                <!-- descricao do objeto -->
+                                <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
+                                    <!-- link para pagina detalhada do produto -->
+                                    
+                                    <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach?>
             <footer>
                 <div class="row">
                     <div class="col green-box"></div>

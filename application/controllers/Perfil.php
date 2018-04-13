@@ -3,9 +3,11 @@
 class Perfil extends CI_Controller{
     /* metodo para autenticar login, usando email e senha*/
     public function autenticado(){
+        $u = $this->session->userdata("usuario_logado");
+        $data = array("usuario" => $u);
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
-        $this->load->view('/paginas/Perfil/meu_perfil.php');
+        $this->load->view('/paginas/Perfil/meu_perfil.php',$data);
     }
     public function autenticar()
         {

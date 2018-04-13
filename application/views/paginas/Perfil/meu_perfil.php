@@ -19,6 +19,7 @@
             }
             ?>
             <div class="dr-form-body">
+                <?=$usuario["NOME"]?>
                 <!-- 
                     ++++++++ Exibir: 
                     -nome
