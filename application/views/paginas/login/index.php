@@ -148,12 +148,7 @@
                     }
                     else
                     {
-                        
-                    ?>
-                        <!--Redirecionar para a pagina de perfil! com um aviso "voce ja esta logado!" -->
-                        <p>Você ja está logado</p>
-                    <?php
-                        redirect('Perfil/autenticado');
+                        redirect('perfil/autenticado');
                     }   
                 ?>
             </div>

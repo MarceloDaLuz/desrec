@@ -1,3 +1,8 @@
+<?php
+    if(!$this->session->userdata("usuario_logado")){
+        redirect('/');
+    }
+?>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -131,14 +136,9 @@
         <div class="dr-form-body">
             <!-- deve exibir nome do usuario e os produtos vinculados a ele-->
             <?php 
-            if($this->session->userdata("usuario_logado"))
+            if($this->session->flashdata("status-success"))
             {
-                ?><p><?=$this->session->flashdata("status-success")?></p>
-            <?php
-            }
-            else
-            {
-                ?><p> <?=$this->session->flashdata("status-failed")?></p>
+                ?><p><?=$this->session->flashdata('status-success')?></p>
             <?php
             }
             ?>
