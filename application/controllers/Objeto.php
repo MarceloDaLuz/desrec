@@ -63,11 +63,12 @@ class Objeto extends CI_Controller{
 
     /* METODO PARA BUSCAR O PRODUTO COM NOME DESEJADO */
     public function buscar(){
-
+        /* metodo estara alocado no botão buscar da barra de navegação(principalmente) */
+        
     }
 
     /* METODO PARA BUSCAR OS OBJETOS DO USUARIO LOGADO */
     public function meuObjeto(){
-        
+        /* O metodo deve buscar por objeto usuario_id  igual ao id_do_usuario logado*/
     }
 }

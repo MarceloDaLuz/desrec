@@ -1,3 +1,4 @@
+<!-- PAGINA QUE EXIBI AS CATEGORIAS CADASTRADAS NO SISTEMA -->
 <html>
 <head>
     <title>Destino Reciclável - Categorias</title>

@@ -5,7 +5,7 @@ html, body{
 }
 body{
     /*background-color: rgb(193,231,210);*/
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.466);
 }
 /* fontes do google*/
 .oswald-font{
@@ -75,26 +75,23 @@ li{
 .dr-form-body{
     background-color: rgba(27, 255, 149, 0.63);
     border-top: rgb(5,127,62) solid;
-    border-radius: 0.8rem;
     padding-top: 2rem;
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 2rem;
+    margin-top:2em;
     margin-left: 20rem;
     margin-right: 20rem;
     margin-bottom:3rem;
 }
 /* PERFIL*/
 .dr-profile-form{
-    margin-top:6rem;
-    margin-left: 18rem;
-    margin-right: 18rem;
+    margin: 2rem;
     box-sizing: border-box;
 }
 .dr-profile-header{
     background-color: rgb(123,218,158);
     border-bottom: solid;
-    border-top-right-radius: 3em;
     text-align: left;
 }
 .dr-profile-title{
@@ -107,7 +104,6 @@ li{
 .dr-profile-body{
     background-color: rgb(194, 196, 231);
     padding-left: 0.3em;
-    border-bottom-right-radius: 1em;
 }
 .dr-profile-content{
     padding: 2em;
@@ -115,11 +111,25 @@ li{
 .dr-profile-field{
     font-size: 1.2rem;
 }
+.dr-profile-footer{
+    padding-bottom: 2em;
+    font-size: 1.5em;
+}
+    .dr-profile-footer > a{
+        font-size: 0.75em;
+        color:black;
+    }
 .dr-profile-icon{
     width: 50px;
     height: 50px;
 }
 /* objetos*/
+
+.dr-obj-catalog{
+    margin-top:3em; 
+    margin-left:6em;
+    margin-right: 6em;
+}
 .dr-obj-form{
     margin:6rem;
     background-color: rgb(93,110,218);
@@ -133,12 +143,14 @@ li{
     
 }
 .dr-obj-f-content{
-    font-size: 3em;
-    text-align: center;
+    font-size: 1.75em;
+    padding:2rem;
+    text-align: left;
 }
 .dr-obj-f-footer{
     padding-bottom: 3em;
     padding-left:25rem;
+
 }
 .dr-obj-btn{
     margin-right: 25%;
@@ -164,7 +176,11 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
+    color: black;
 }
+    footer > a{
+        color:black
+    }
 .green-box{
     background-color:transparent;
     width: 100%;
@@ -196,12 +212,20 @@ footer{
     margin-right: 2rem;
     width: 33%;
     border-color: rgba(6,62,4,0.8);
-    background-color: rgb(240,243,239);
+    background-color: transparent;
     float: left;
     position: relative;
     margin-bottom: 5%;
 }
 
+.dr-card-title{
+    text-align:center;
+    font-size: 2rem;
+}
+
+.dr-card-author{
+    float: right;
+}
 .dr-content-card{
     text-align: center;
 }

@@ -36,7 +36,7 @@
                 </div>
                 <div class="dr-profile-body">
                     <div class="dr-profile-field">
-                        <p class="dr-profile-content">
+                        <div class="dr-profile-content">
                             <em>Nome:</em> <?=$usuario["NOME"]?>
                             <br>
                             <em>Endereço:</em> <?=$usuario["ENDERECO"]?>
@@ -44,8 +44,16 @@
                             <em>E-mail:</em> <?= $usuario["EMAIL"]?>
                             <br>
                             <em>CPF:</em> <?= $usuario["CPF"]?>
-                        </p>
-                        
+                            <hr>
+                            <div class="dr-profile-footer">
+                                <h3> Seus Objetos:</h3>
+                                <?php foreach ($objetos as $o):?>
+                                    <?="<br>"?>
+                                    <?=anchor("Objeto/mostrar?id={$o['ID']}","{$o['NOME']}",array('class'=>'btn card-link btn-link'))?>
+                                    <?="<hr>"?>
+                                <?php endforeach?>
+                            </div>
+                        </div>
                     </div>
                 </div>                
             </div>

@@ -17,17 +17,17 @@
 
 <body>
     <div class="dr-body">
-        <div class="container">
+        <div class="container dr-obj-catalog">
             <!-- fazer um foreach -->
             <?php foreach($objetos as $o):?>
                 <div class="card dr-card">
                     <div class="card-body">
                         <!-- nome do objeto -->
-                        <h5 class="card-title"><?=$o["NOME"]?></h5>
+                        <h5 class="card-title dr-card-title"><?=$o["NOME"]?></h5>
                         <hr>
                             <!-- nome do dono vinculado ao objeto -->
                             
-                            <h6 class="card-subtitle mb-2 text-muted"><i><?=$o["usuario_id"]?></i></h6>
+                            <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
                                 <!-- descricao do objeto -->
                                 <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
                                     <!-- link para pagina detalhada do produto -->

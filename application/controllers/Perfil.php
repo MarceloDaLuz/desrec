@@ -5,7 +5,9 @@ class Perfil extends CI_Controller{
     public function autenticado(){
         /* CRIAMOS UM ARRAY, ONDE SERA SETADO COM O USUARIO LOGADO, ASSIM PODEREMOS EXIBIR OS DADOS DO USUARIO NA PAGINA DE PERFIL */
         $u = $this->session->userdata("usuario_logado");
-        $data = array("usuario" => $u);
+        $this->load->model("objeto_model");
+        $objetos = $this->objeto_model->buscarMeuObjeto($u["ID"]);
+        $data = array("usuario" => $u,"objetos"=>$objetos);
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
         $this->load->view('/paginas/Perfil/meu_perfil.php',$data);

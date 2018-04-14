@@ -1,0 +1,46 @@
+mudar o banco:
+tabela de objeto:
+    -id 
+    -nome
+    -descrição
+    -fotos
+    -data da postagem
+    -valor*
+    -id do usuario
+    -id da categoria**
+    -termo***
+
+tabela de usuario:
+    -id
+    -nome
+    -endereco
+    -telefone
+    -foto
+    -CPF
+    -email
+    -senha
+    -termo***   
+
+tabela de categoria:
+    -id
+    -nome
+    -descrição
+    -fotos
+
+tabela de solicitação para coleta:
+    -id
+    -nome
+    -data da solicitação
+    -data de vencimento****
+    -id_do_objeto
+    -id_do_dono
+    -id_de_pretendente
+
+--
+    valor: o valor pode ser "00,00" nesse caso deve ser exibido como "doação";
+    id da categoria: na pagina de cadastro sera feito um foreach e cada uma das categorias cadastradas devem ser exibidas em um "radio"
+    termo: o termo servira mais para criar um verficiar se o usuario realmte deseja se cadastrar. Sera exibido dois botoes: eu aceito e não aceito,
+        caso o não aceito seja marcado, então o cadastro do produto não pode ser feito.
+    data do vencimento: fazer com que a solicitação seja "deletada" depois de um determinado tempo, usando : $timestamp = strtotime("+3 days")
+--
+

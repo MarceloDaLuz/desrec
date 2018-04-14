@@ -96,6 +96,9 @@
                                 <?=anchor('Perfil/autenticado','Meu Perfil',array('class'=>'btn btn-primary'))?>
                             </li>
                             <li class="nav-item">
+                                <?=anchor('Objeto/cadastro','Cadastre um objeto',array("class"=>"btn btn-primary"))?>
+                            </li>
+                            <li class="nav-item">
                                 <?=anchor('Perfil/deslogar','Deslogar',array('class'=>'btn btn-danger'))?>
                             </li>
                             

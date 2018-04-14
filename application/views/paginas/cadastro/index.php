@@ -1,3 +1,4 @@
+<!-- PAGINA PARA CADASTROS DE NOVOS USUARIO-->
 <html>
 <head>
     <title>Destino Reciclável - Cadastro</title>
