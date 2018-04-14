@@ -65,4 +65,9 @@ class Objeto extends CI_Controller{
     public function buscar(){
 
     }
+
+    /* METODO PARA BUSCAR OS OBJETOS DO USUARIO LOGADO */
+    public function meuObjeto(){
+        
+    }
 }
