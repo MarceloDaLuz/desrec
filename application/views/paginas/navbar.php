@@ -56,7 +56,7 @@
                     </div>
                 </nav>
             <?php else:?>
-                <nav class="navbar navbar-expand-lg navbar-default-setting pt-sans-font">
+                <nav class="navbar navbar-expand-lg navbar-color-logged pt-sans-font">
                     <a href="<?= base_url('/')?>" class="navbar-brand brand-title">
                         <!-- Brand-->
                         <img src="<?=base_url("./img/recycle.svg")?>" width="48px" height="48px"> Destino Reciclável

@@ -3,12 +3,14 @@
 class Perfil extends CI_Controller{
     /* metodo para autenticar login, usando email e senha*/
     public function autenticado(){
+        
         $u = $this->session->userdata("usuario_logado");
         $data = array("usuario" => $u);
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
         $this->load->view('/paginas/Perfil/meu_perfil.php',$data);
     }
+    /* METODO PARA VALIDAR UM CADASTRO*/
     public function autenticar()
         {
             $this->load->model("usuario_model");
@@ -28,7 +30,7 @@ class Perfil extends CI_Controller{
             }
             
         }
-
+    /* METODO PARA DESLOGAR*/ 
     public function deslogar()
     {
         $this->session->unset_userdata("usuario_logado");

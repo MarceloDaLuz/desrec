@@ -20,6 +20,7 @@ class Objeto extends CI_Controller{
         /* Leitura do model objeto */
         $this->load->model("objeto_model");
         /* Busca do objeto pelo id QUE É PASSADO PELO GET-URL */
+        $user = $this->session->userdata("usuario_logado");
         $id= $this->input->get("id");
         $objeto = $this->objeto_model->buscarObjetoPorID($id);
         $dados = array("objeto"=>$objeto);

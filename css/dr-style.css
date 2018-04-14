@@ -4,7 +4,8 @@ html, body{
     height: 100%;
 }
 body{
-    background-color: rgb(203,231,159);
+    /*background-color: rgb(193,231,210);*/
+    background-color: white;
 }
 /* fontes do google*/
 .oswald-font{
@@ -31,12 +32,14 @@ body{
 
 /* barra de navegação*/
 .navbar-default-setting{
-    background-color: rgba(6,33,4,0.8);
+    background-color: rgba(29,83,231,0.8);
     /*background-color:rgba(255,255,255, 0.8);*/
 }
-
+.navbar-color-logged{
+    background-color: rgb(20,218,0);
+}
 a{
-    color: rgb(255,255,255) ;    
+    color: black;    
     font-style: unset;
     font-size: larger;
 }
@@ -81,7 +84,65 @@ li{
     margin-right: 20rem;
     margin-bottom:3rem;
 }
-
+/* PERFIL*/
+.dr-profile-form{
+    margin-top:6rem;
+    margin-left: 18rem;
+    margin-right: 18rem;
+    box-sizing: border-box;
+}
+.dr-profile-header{
+    background-color: rgb(123,218,158);
+    border-bottom: solid;
+    border-top-right-radius: 3em;
+    text-align: left;
+}
+.dr-profile-title{
+    font-size: 3em;
+    margin-left:3rem;
+    padding-top:1rem;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+.dr-profile-body{
+    background-color: rgb(194, 196, 231);
+    padding-left: 0.3em;
+    border-bottom-right-radius: 1em;
+}
+.dr-profile-content{
+    padding: 2em;
+}
+.dr-profile-field{
+    font-size: 1.2rem;
+}
+.dr-profile-icon{
+    width: 50px;
+    height: 50px;
+}
+/* objetos*/
+.dr-obj-form{
+    margin:6rem;
+    background-color: rgb(93,110,218);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border:solid;
+}
+.dr-obj-f-header{
+    
+}
+.dr-obj-f-content{
+    font-size: 3em;
+    text-align: center;
+}
+.dr-obj-f-footer{
+    padding-bottom: 3em;
+    padding-left:25rem;
+}
+.dr-obj-btn{
+    margin-right: 25%;
+}
 /* titles*/
     /*h1*/
 .dr-title-h1{
@@ -105,7 +166,7 @@ footer{
     width: 100%;
 }
 .green-box{
-    background-color:rgb(60,216,39);
+    background-color:transparent;
     width: 100%;
 }
 
