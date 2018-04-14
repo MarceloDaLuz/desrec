@@ -17,25 +17,81 @@
 
 <body>
     <div class="dr-body">
-        <div class="container dr-obj-catalog">
+        <div class="container">
             <!-- fazer um foreach -->
-            <?php foreach($objetos as $o):?>
-                <div class="card dr-card">
-                    <div class="card-body">
-                        <!-- nome do objeto -->
-                        <h5 class="card-title dr-card-title"><?=$o["NOME"]?></h5>
-                        <hr>
-                            <!-- nome do dono vinculado ao objeto -->
-                            
-                            <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
-                                <!-- descricao do objeto -->
-                                <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
-                                    <!-- link para pagina detalhada do produto -->
-                                    
-                                    <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
-                    </div>
+            <?php if($this->session->userdata("usuario_logado")):?>
+                <div class="dr-obj">
+                    <?php if($meus_objetos!=null):?>
+                            <h1 class="dr-title-h1">Seus objetos:</h1>
+                            <?php foreach($meus_objetos as $mo):?>
+                                <div class="card dr-card">
+                                    <div class="card-body">
+                                        <!-- nome do objeto -->
+                                        <h5 class="card-title dr-card-title"><?=$mo["NOME"]?></h5>
+                                        <hr>
+                                            <!-- nome do dono vinculado ao objeto -->
+                                            <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$usuario["NOME"]?></i></h6>
+                                                <!-- descricao do objeto -->
+                                                <p class="card-text dr-content-card"><?=$mo["DESCRICAO"]?></p>    
+                                                    <!-- link para pagina detalhada do produto -->
+                                                    
+                                                    <?=anchor("Objeto/mostrar?id={$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                    </div>
+                                </div>
+                            <?php endforeach?>
+                    <?php else:?>
+                        <h1 class="dr-title-h1">Não temos objetos</h1>
+                    <?php endif?>
                 </div>
-            <?php endforeach?>
+                
+                <br>
+
+                <div class="dr-obj-catalog">
+                    <h1 class="dr-title-h1">Outros objetos:</h1>
+                    <?php foreach($objetos as $o):?>
+                        <?php if($o["usuario_id"]<>$usuario["ID"]):?>
+                            <div class="card dr-card">
+                                <div class="card-body">
+                                    <!-- nome do objeto -->
+                                    <h5 class="card-title dr-card-title"><?=$o["NOME"]?></h5>
+                                    <hr>
+                                        <!-- nome do dono vinculado ao objeto -->
+                                        
+                                        <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
+                                            <!-- descricao do objeto -->
+                                            <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
+                                                <!-- link para pagina detalhada do produto -->
+                                                
+                                                <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                </div>
+                            </div>
+                        <?php endif?>
+                    <?php endforeach?>
+                </div>
+            <?php else:?>
+                <div class="dr-obj-catalog">
+                    <h1 class="dr-title-h1">Objetos:</h1>
+                    <?php foreach($objetos as $o):?>
+                        <?php if($o["usuario_id"]<>$usuario["ID"]):?>
+                            <div class="card dr-card">
+                                <div class="card-body">
+                                    <!-- nome do objeto -->
+                                    <h5 class="card-title dr-card-title"><?=$o["NOME"]?></h5>
+                                    <hr>
+                                        <!-- nome do dono vinculado ao objeto -->
+                                        
+                                        <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
+                                            <!-- descricao do objeto -->
+                                            <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
+                                                <!-- link para pagina detalhada do produto -->
+                                                
+                                                <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                </div>
+                            </div>
+                        <?php endif?>
+                    <?php endforeach?>
+                </div>
+            <?php endif?>
             <footer>
                 <div class="row">
                     <div class="col green-box"></div>

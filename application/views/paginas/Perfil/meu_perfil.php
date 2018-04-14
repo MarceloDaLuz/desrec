@@ -46,7 +46,7 @@
                             <em>CPF:</em> <?= $usuario["CPF"]?>
                             <hr>
                             <div class="dr-profile-footer">
-                                <h3> Seus Objetos:</h3>
+                                <h3> Meus Objetos:</h3>
                                 <?php foreach ($objetos as $o):?>
                                     <?="<br>"?>
                                     <?=anchor("Objeto/mostrar?id={$o['ID']}","{$o['NOME']}",array('class'=>'btn card-link btn-link'))?>
