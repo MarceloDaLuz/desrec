@@ -32,14 +32,14 @@ body{
 
 /* barra de navegação*/
 .navbar-default-setting{
-    background-color: rgba(29,83,231,0.8);
+    background-color: rgba(0, 6, 81,0.8);
     /*background-color:rgba(255,255,255, 0.8);*/
 }
 .navbar-color-logged{
-    background-color: rgb(20,218,0);
+    background-color: rgb(6, 66, 0);
 }
 a{
-    color: black;    
+    color: white;    
     font-style: unset;
     font-size: larger;
 }

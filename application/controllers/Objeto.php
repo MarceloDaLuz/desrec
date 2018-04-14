@@ -29,7 +29,7 @@ class Objeto extends CI_Controller{
         $this->load->view('paginas/Objeto/mostra.php',$dados);
 
     }
-    /* SALVAR OBJETO NO BANCO */
+    /* SALVAR OBJETO NOVO NO BANCO */
     public function novo(){
         /* pega o usuario logado */
         $user = $this->session->userdata("usuario_logado");
@@ -54,5 +54,15 @@ class Objeto extends CI_Controller{
         $this->session->set_flashdata("upload-success","Seu objeto foi cadastrado com sucesso!");
         /* redireciona para o perfil*/
         redirect('Perfil/autenticado');
+    }
+
+    /* CRIA UM OBJETO NO PERFIL DO USUARIO E ALTERA O ESTADO DO OBJETO */
+    public function coletar(){  
+
+    }
+
+    /* METODO PARA BUSCAR O PRODUTO COM NOME DESEJADO */
+    public function buscar(){
+
     }
 }
