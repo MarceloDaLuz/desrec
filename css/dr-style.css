@@ -136,29 +136,22 @@ li{
     position: relative;
 }
 .dr-obj-form{
-    margin:6rem;
-    background-color: rgb(93,110,218);
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    border:solid;
+   margin-top:2em;
 }
 .dr-obj-f-header{
-    
+   margin-bottom:1em;
+}
+.dr-obj-p{
+    text-align: center
 }
 .dr-obj-f-content{
-    font-size: 1.75em;
-    padding:2rem;
-    text-align: left;
+    text-align: center;
+    padding-bottom: 2em;
+    margin-bottom:0.6em;
 }
 .dr-obj-f-footer{
-    padding-bottom: 3em;
-    padding-left:25rem;
-
-}
-.dr-obj-btn{
-    margin-right: 25%;
+    padding-left: 45%;
+    padding-right: 45%
 }
 /* titles*/
     /*h1*/

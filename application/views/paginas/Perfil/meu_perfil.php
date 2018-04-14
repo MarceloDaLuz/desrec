@@ -47,11 +47,16 @@
                             <hr>
                             <div class="dr-profile-footer">
                                 <h3> Meus Objetos:</h3>
-                                <?php foreach ($objetos as $o):?>
-                                    <?="<br>"?>
-                                    <?=anchor("Objeto/mostrar?id={$o['ID']}","{$o['NOME']}",array('class'=>'btn card-link btn-link'))?>
-                                    <?="<hr>"?>
-                                <?php endforeach?>
+                                <?php if($objetos==null):?>
+                                    <div style="margin-top:1rem" class="alert alert-danger">Você não possui nenhum objeto cadastrado.</div>
+                                <?php else:?>
+
+                                    <?php foreach ($objetos as $o):?>
+                                        <?="<br>"?>
+                                        <?=anchor("Objeto/mostrar?id={$o['ID']}","{$o['NOME']}",array('class'=>'btn card-link btn-link'))?>
+                                        <?="<hr>"?>
+                                    <?php endforeach?>
+                                <?php endif?>
                             </div>
                         </div>
                     </div>

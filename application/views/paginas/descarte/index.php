@@ -20,8 +20,8 @@
         <div class="container">
             <!-- fazer um foreach -->
             <?php if($this->session->userdata("usuario_logado")):?>
-                <div class="dr-obj">
                     <?php if($meus_objetos!=null):?>
+                        <div class="dr-obj">
                             <h1 class="dr-title-h1">Seus objetos:</h1>
                             <?php foreach($meus_objetos as $mo):?>
                                 <div class="card dr-card">
@@ -39,10 +39,10 @@
                                     </div>
                                 </div>
                             <?php endforeach?>
+                        </div>
                     <?php else:?>
-                        <h1 class="dr-title-h1">Não temos objetos</h1>
+                        <div style="margin-top:1rem" class="alert alert-danger">Você não possui nenhum objeto cadastrado.</div>
                     <?php endif?>
-                </div>
                 
                 <br>
 
@@ -71,6 +71,7 @@
             <?php else:?>
                 <div class="dr-obj-catalog">
                     <h1 class="dr-title-h1">Objetos:</h1>
+                    <hr>
                     <?php foreach($objetos as $o):?>
                         <?php if($o["usuario_id"]<>$usuario["ID"]):?>
                             <div class="card dr-card">
