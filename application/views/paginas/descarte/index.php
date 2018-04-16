@@ -32,10 +32,10 @@
                                             <!-- nome do dono vinculado ao objeto -->
                                             <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$usuario["NOME"]?></i></h6>
                                                 <!-- descricao do objeto -->
-                                                <p class="card-text dr-content-card"><?=$mo["DESCRICAO"]?></p>    
+                                                <p class="card-text dr-content-card"><?=character_limiter($mo["DESCRICAO"],10)?></p>    
                                                     <!-- link para pagina detalhada do produto -->
                                                     
-                                                    <?=anchor("Objeto/mostrar?id={$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                                    <?=anchor("Objeto/mostrar/{$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
                                     </div>
                                 </div>
                             <?php endforeach?>
@@ -59,10 +59,10 @@
                                         
                                         <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
                                             <!-- descricao do objeto -->
-                                            <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
+                                            <p class="card-text dr-content-card"><?=character_limiter($o["DESCRICAO"],10)?></p>    
                                                 <!-- link para pagina detalhada do produto -->
                                                 
-                                                <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                                <?=anchor("Objeto/mostrar/{$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
                                 </div>
                             </div>
                         <?php endif?>
@@ -83,10 +83,10 @@
                                         
                                         <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$o["usuario_id"]?></i></h6>
                                             <!-- descricao do objeto -->
-                                            <p class="card-text dr-content-card"><?=$o["DESCRICAO"]?></p>    
+                                            <p class="card-text dr-content-card"><?=character_limiter($o["DESCRICAO"],10)?></p>    
                                                 <!-- link para pagina detalhada do produto -->
                                                 
-                                                <?=anchor("Objeto/mostrar?id={$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                                <?=anchor("Objeto/mostrar/{$o['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
                                 </div>
                             </div>
                         <?php endif?>

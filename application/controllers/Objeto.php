@@ -15,13 +15,13 @@ class Objeto extends CI_Controller{
         $this->load->view('paginas/Objeto/cadastro.php');
     }
 
-    public function mostrar(){
+    public function mostrar($id){
         /* Exibir pagina para mostrar o objeto, detalhadamente ------------ qualquer usuario pode usar acessar! */
         /* Leitura do model objeto */
         $this->load->model("objeto_model");
         /* Busca do objeto pelo id QUE É PASSADO PELO GET-URL */
         $user = $this->session->userdata("usuario_logado");
-        $id= $this->input->get("id");
+        //$id= $this->input->get("id");
         $objeto = $this->objeto_model->buscarObjetoPorID($id);
         $dados = array("objeto"=>$objeto);
         $this->load->view('paginas/head');
@@ -58,6 +58,27 @@ class Objeto extends CI_Controller{
 
     /* CRIA UM OBJETO NO PERFIL DO USUARIO E ALTERA O ESTADO DO OBJETO */
     public function coletar(){  
+        //pega o id do objeto
+        $id = $this->input->get("id");
+        //leitura do model
+        $this->load->model("objeto_model");
+        //envia o id do objeto e retorna em uma variavel
+        $objeto = $this->objeto_model->buscarObjetoPorID($id);
+        //data da coleta
+        $d = date("d/m/Y H:i:s");
+        //pega o usuario logado
+        $user = $this->session->userdata("usuario_logado");
+
+        $novo_objeto = array(
+            "NOME"=> $objeto["NOME"],
+            "DESCRICAO"=> $objeto["DESCRICAO"],
+            "VALOR"=>$objeto["VALOR"],
+            "ESTADO"=> '1',
+            "DATAPOST"=> $d,
+            "usuario_id"=> $user["ID"]
+        );
+
+        $this->objeto_model->salvar($novo_objeto);
 
     }
 
