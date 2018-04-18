@@ -61,7 +61,6 @@ class Objeto extends CI_Controller{
     public function coletar($id){  
         //leitura do model
         $this->load->model("objeto_model");
-
         //leitura do coleta model
         $this->load->model("coleta_model");
         //envia o id do objeto e retorna em uma variavel
@@ -70,18 +69,30 @@ class Objeto extends CI_Controller{
         $d = dataConvert(date("d/m/Y"));
         //pega o usuario logado
         $user = $this->session->userdata("usuario_logado");
+        //cria um "cole" do objeto alterando o usuario_id
         $novo_objeto = array(
-                    "objeto_id" =>$objeto["ID"],
-                    //"DESCRICAO" =>$objeto["DESCRICAO"],
-                    //"VALOR"=> $objeto["VALOR"],
-                    //"ESTADO"=> '0',
-                    //"DATAPOST"=>$d,
-                    "usuario_id"=> $user["ID"]
+            "NOME"=>$objeto["NOME"],
+            "DESCRICAO"=>$objeto["DESCRICAO"],
+            "VALOR"=>$objeto["VALOR"],
+            "ESTADO"=>'0',
+            "DATAPOST"=>$d,
+            "usuario_id"=>$user["ID"]
         );
-        //$this->bjeto_model->salvar($novo_objeto);
-        $this->coleta_model->salvar($novo_objeto);
+        //criar um item para a tabela historico
+        $item_do_historico = array(
+                    "objeto_id"=>$objeto["ID"],
+                    "coletador"=> $user["ID"],
+                    "fornecedor"=>$objeto["usuario_id"]
+        );
+        //Salva uma copia do objeto no banco
+        $this->objeto_model->salvar($novo_objeto);
+        //insere dados na tabela historico 
+        $this->coleta_model->salvar($item_do_historico);
+        //Altera a coluna ESTADO ta tabela objetos
         $this->objeto_model->objetoColetado($id);
+        //Envia uma mensagem para o usuario ficar ciente de que sua coleta foi supimpa
         $this->session->set_flashdata("success","Objeto coletado com sucesso!");
+        //Redireciona para a pagina de perfil
         redirect("Perfil/autenticado");
 
     }
