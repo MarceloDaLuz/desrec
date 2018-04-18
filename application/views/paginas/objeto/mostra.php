@@ -16,7 +16,7 @@
                 <p>Valor: <?=$objeto["VALOR"]?></p>
             </div>
             <div class="dr-obj-f-footer">
-                <?=anchor('Objeto/coletar','Coletar',array("class"=>"btn btn-success"))?>
+                <?=anchor("Objeto/coletar/{$objeto['ID']}",'Coletar',array("class"=>"btn btn-success"))?>
             </div>
         </div>
     </div>

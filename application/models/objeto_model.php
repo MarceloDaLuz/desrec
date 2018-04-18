@@ -4,11 +4,18 @@
         public function salvar($objeto){
             $this->db->insert("objeto",$objeto);
         }
-        
+        public function objetoColetado($objeto_id){ 
+            $dado= array('ESTADO' =>'0');
+            $this->db->where("ID", $objeto_id);
+            $this->db->update("objeto",$dado);
+        }
         public function buscarObjeto(){
             return $this->db->get("objeto")->result_array();
         }
 
+        public function buscarObjetoDisponivel(){
+            return $this->db->get_where("objeto",array("ESTADO"=>'1'))->result_array();
+        }
         public function buscarObjetoPorID($id){
             return $this->db->get_where("objeto",array("id"=>$id))->row_array();
         }

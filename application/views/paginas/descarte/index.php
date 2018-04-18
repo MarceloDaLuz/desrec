@@ -24,20 +24,22 @@
                         <div class="dr-obj">
                             <h1 class="dr-title-h1">Seus objetos:</h1>
                             <?php foreach($meus_objetos as $mo):?>
-                                <div class="card dr-card">
-                                    <div class="card-body">
-                                        <!-- nome do objeto -->
-                                        <h5 class="card-title dr-card-title"><?=$mo["NOME"]?></h5>
-                                        <hr>
-                                            <!-- nome do dono vinculado ao objeto -->
-                                            <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$usuario["NOME"]?></i></h6>
-                                                <!-- descricao do objeto -->
-                                                <p class="card-text dr-content-card"><?=character_limiter($mo["DESCRICAO"],10)?></p>    
-                                                    <!-- link para pagina detalhada do produto -->
-                                                    
-                                                    <?=anchor("Objeto/mostrar/{$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                <?php if($mo["ESTADO"]<>0):?>    
+                                    <div class="card dr-card">
+                                        <div class="card-body">
+                                            <!-- nome do objeto -->
+                                            <h5 class="card-title dr-card-title"><?=$mo["NOME"]?></h5>
+                                            <hr>
+                                                <!-- nome do dono vinculado ao objeto -->
+                                                <h6 class="card-subtitle mb-2 text-muted dr-card-author"><i><?=$usuario["NOME"]?></i></h6>
+                                                    <!-- descricao do objeto -->
+                                                    <p class="card-text dr-content-card"><?=character_limiter($mo["DESCRICAO"],10)?></p>    
+                                                        <!-- link para pagina detalhada do produto -->
+                                                        
+                                                        <?=anchor("Objeto/mostrar/{$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endif?>
                             <?php endforeach?>
                         </div>
                     <?php else:?>
@@ -49,7 +51,7 @@
                 <div class="dr-obj-catalog">
                     <h1 class="dr-title-h1">Outros objetos:</h1>
                     <?php foreach($objetos as $o):?>
-                        <?php if($o["usuario_id"]<>$usuario["ID"]):?>
+                        <?php if($o["usuario_id"]<>$usuario["ID"] && $o["ESTADO"]<>0):?>
                             <div class="card dr-card">
                                 <div class="card-body">
                                     <!-- nome do objeto -->
@@ -73,7 +75,7 @@
                     <h1 class="dr-title-h1">Objetos:</h1>
                     <hr>
                     <?php foreach($objetos as $o):?>
-                        <?php if($o["usuario_id"]<>$usuario["ID"]):?>
+                        <?php if($o["usuario_id"]<>$usuario["ID"] && $o["ESTADO"]<>0):?>
                             <div class="card dr-card">
                                 <div class="card-body">
                                     <!-- nome do objeto -->
