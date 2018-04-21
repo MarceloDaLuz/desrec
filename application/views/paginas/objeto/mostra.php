@@ -30,7 +30,7 @@
                     <?php if($this->session->userdata("usuario_logado")):?>
                         <div class="dr-obj-f-header">
                             <h1 class="dr-title-h1"><?=$objeto["NOME"];?></h1>
-                             <p class="dr-obj-p"><em>Dono:<?=$u["NOME"]?></em></p>
+                             <p class="dr-obj-p"><em>Dono:<?=$objeto["usuario_id"]?></em></p>
                         </div>
                         <div class="dr-obj-f-content titillium-web-font">
                             <p>Descrição: <?=$objeto["DESCRICAO"]?></p>
@@ -49,7 +49,7 @@
                     <?php else:?>
                         <div class="dr-obj-f-header">
                             <h1 class="dr-title-h1"><?=$objeto["NOME"];?></h1>
-                            <p class="dr-obj-p"><em>Dono:<?=$u["NOME"]?></em></p>
+                            <p class="dr-obj-p"><em>Dono:<?=$objeto["usuario_id"]?></em></p>
                         </div>
                         <div class="dr-obj-f-content titillium-web-font">
                             <p>Descrição: <?=$objeto["DESCRICAO"]?></p>
