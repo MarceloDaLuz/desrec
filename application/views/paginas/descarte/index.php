@@ -39,6 +39,7 @@
                                                         <?=anchor("Objeto/mostrar/{$mo['ID']}",'Acessar',array('class'=>'btn btn-link card-link dr-btn-card'))?>
                                         </div>
                                     </div>
+                                    
                                 <?php endif?>
                             <?php endforeach?>
                         </div>

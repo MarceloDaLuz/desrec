@@ -26,3 +26,6 @@
                     </div>
                 </div>
 </footer>
+<script>
+            $('collapse').collapse()
+        </script>

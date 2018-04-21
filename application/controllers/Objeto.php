@@ -10,9 +10,12 @@ class Objeto extends CI_Controller{
 
     public function cadastro(){
         /* Exibir pagina para cadastro -------apenas usuarios logados podem acessar esta paginas! */
+        $this->load->model("categorias_model");
+        $c=$this->categorias_model->buscarCategoriaDropdown();
+        $datas['categorias'] = $c;
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
-        $this->load->view('paginas/Objeto/cadastro.php');
+        $this->load->view('paginas/Objeto/cadastro.php',$datas);        
     }
 
     public function mostrar($id){
@@ -29,13 +32,16 @@ class Objeto extends CI_Controller{
         $this->load->view('paginas/Objeto/mostra.php',$dados);
 
     }
+
+    /* ------------------------------------------------------------------------------------------------------------------------------------- */
+    
     /* SALVAR OBJETO NOVO NO BANCO */
     public function novo(){
         /* pega o usuario logado */
         $user = $this->session->userdata("usuario_logado");
         
         /* Data - now*/
-        $d = dataConvert(date("d/m/Y H:i:s"));
+        $d = dataConvert(date("d/m/Y"));
 
         /* Cria um objeto para salvar no banco */
         $objeto = array(
@@ -44,7 +50,8 @@ class Objeto extends CI_Controller{
             "VALOR"=>$this->input->post("valor"),
             "ESTADO"=> '1',
             "DATAPOST"=> $d,
-            "usuario_id"=> $user["ID"]
+            "usuario_id"=> $user["ID"],
+            "categorias_id"=> $this->input->post("categoria")
         );
         /*Leitura do model */
         $this->load->model("objeto_model");
@@ -69,15 +76,17 @@ class Objeto extends CI_Controller{
         $d = dataConvert(date("d/m/Y"));
         //pega o usuario logado
         $user = $this->session->userdata("usuario_logado");
-        //cria um "cole" do objeto alterando o usuario_id
-        $novo_objeto = array(
-            "NOME"=>$objeto["NOME"],
-            "DESCRICAO"=>$objeto["DESCRICAO"],
-            "VALOR"=>$objeto["VALOR"],
-            "ESTADO"=>'0',
-            "DATAPOST"=>$d,
-            "usuario_id"=>$user["ID"]
-        );
+        /*
+            cria um "cole" do objeto alterando o usuario_id e o estado
+            $novo_objeto = array(
+                "NOME"=>$objeto["NOME"],
+                "DESCRICAO"=>$objeto["DESCRICAO"],
+                "VALOR"=>$objeto["VALOR"],
+                "ESTADO"=>'0',
+                "DATAPOST"=>$d,
+                "usuario_id"=>$user["ID"]
+            );
+        */
         //criar um item para a tabela historico
         $item_do_historico = array(
                     "objeto_id"=>$objeto["ID"],
@@ -85,11 +94,11 @@ class Objeto extends CI_Controller{
                     "fornecedor"=>$objeto["usuario_id"]
         );
         //Salva uma copia do objeto no banco
-        $this->objeto_model->salvar($novo_objeto);
+            //$this->objeto_model->salvar($novo_objeto);
         //insere dados na tabela historico 
         $this->coleta_model->salvar($item_do_historico);
-        //Altera a coluna ESTADO ta tabela objetos
-        $this->objeto_model->objetoColetado($id);
+        //Altera a coluna ESTADO e USUARIO_ID ta tabela objetos
+        $this->objeto_model->objetoColetado($id,$user["ID"]);
         //Envia uma mensagem para o usuario ficar ciente de que sua coleta foi supimpa
         $this->session->set_flashdata("success","Objeto coletado com sucesso!");
         //Redireciona para a pagina de perfil

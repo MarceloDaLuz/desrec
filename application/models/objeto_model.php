@@ -4,8 +4,8 @@
         public function salvar($objeto){
             $this->db->insert("objeto",$objeto);
         }
-        public function objetoColetado($objeto_id){ 
-            $dado= array('ESTADO' =>'0');
+        public function objetoColetado($objeto_id, $usuario_id){ 
+            $dado= array('ESTADO' =>'0',"usuario_id"=>$usuario_id);
             $this->db->where("ID", $objeto_id);
             $this->db->update("objeto",$dado);
         }

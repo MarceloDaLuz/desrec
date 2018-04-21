@@ -6,15 +6,18 @@
             -->
             <?php if(!$this->session->userdata("usuario_logado")):?>
                 <nav class="navbar navbar-expand-lg navbar-default-setting pt-sans-font">
+                    
                     <a href="<?= base_url('/')?>" class="navbar-brand brand-title">
                         <!-- Brand-->
                         <img src="<?=base_url("./img/recycle.svg")?>" width="48px" height="48px"> Destino Reciclável
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon">
+                            
+                        </span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <!-- Abas-->
                             <li class="nav-item">
@@ -65,7 +68,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <!-- Abas-->
                             <li class="nav-item">
