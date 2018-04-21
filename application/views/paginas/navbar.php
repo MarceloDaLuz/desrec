@@ -81,16 +81,18 @@
                                 <a class="nav-link" href="<?=base_url('index.php/descarte')?>">Descarte</a>
                             </li>
                         </ul>
-                        <form class=" navbar form-inline my-2 my-lg-0">
-                            <!-- Barra de pesquisa-->
-                            <div class="input-group mr-sm-2">
-                                <input class="form-control" type="search" placeholder="Encontre um produto!" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <!--
+                            <form class=" navbar form-inline my-2 my-lg-0">
+                                Barra de pesquisa
+                                <div class="input-group mr-sm-2">
+                                    <input class="form-control" type="search" placeholder="Encontre um produto!" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </form>
+                            </form>
+                        -->
                         <ul class="navbar-nav">
                             <!-- precisa-se de um padding-->
                             <!-- verificar se o usuario esta logado, caso esteja, esconder o botão de cadastre-se -->

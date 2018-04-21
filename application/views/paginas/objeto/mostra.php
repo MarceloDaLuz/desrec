@@ -18,17 +18,30 @@
                 <div class="dr-obj-f-content titillium-web-font">
                     <p>Descrição: <?=$objeto["DESCRICAO"]?></p>
                     <p>Valor: <?=$objeto["VALOR"]?></p>
-                    <p>Categoria: <?=$objeto["categorias_id"]?></p>
+                    <?php 
+                        foreach ($categoria as $c) {
+                            if($c["id"]==$objeto["categorias_id"]){
+                                ?> <p>Categoria: <?=$c["nome"]?></p><?php
+                            }
+                        }
+                    ?>
                 </div>
                 <?php else:?>
                     <?php if($this->session->userdata("usuario_logado")):?>
                         <div class="dr-obj-f-header">
                             <h1 class="dr-title-h1"><?=$objeto["NOME"];?></h1>
-                            <p class="dr-obj-p"><em>Dono:<?=$objeto["usuario_id"]?></em></p>
+                             <p class="dr-obj-p"><em>Dono:<?=$u["NOME"]?></em></p>
                         </div>
                         <div class="dr-obj-f-content titillium-web-font">
                             <p>Descrição: <?=$objeto["DESCRICAO"]?></p>
                             <p>Valor: <?=$objeto["VALOR"]?></p>
+                            <?php 
+                                foreach ($categoria as $c) {
+                                    if($c["id"]==$objeto["categorias_id"]){
+                                        ?> <p>Categoria: <?=$c["nome"]?></p><?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="dr-obj-f-footer">
                             <?=anchor("Objeto/coletar/{$objeto['ID']}",'Coletar',array("class"=>"btn btn-success"))?>
@@ -36,17 +49,24 @@
                     <?php else:?>
                         <div class="dr-obj-f-header">
                             <h1 class="dr-title-h1"><?=$objeto["NOME"];?></h1>
-                            <p class="dr-obj-p"><em>Dono:<?=$objeto["usuario_id"]?></em></p>
+                            <p class="dr-obj-p"><em>Dono:<?=$u["NOME"]?></em></p>
                         </div>
                         <div class="dr-obj-f-content titillium-web-font">
                             <p>Descrição: <?=$objeto["DESCRICAO"]?></p>
                             <p>Valor: <?=$objeto["VALOR"]?></p>
+                            <?php 
+                                foreach ($categoria as $c) {
+                                    if($c["id"]==$objeto["categorias_id"]){
+                                        ?> <p>Categoria: <?=$c["nome"]?></p><?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="dr-obj-f-footer">
                             <?=anchor("Perfil/autenticado",'Cadastre-se ou logue para coletar',array("class"=>"btn btn-success"))?>
                         </div>
                     <?php endif?>
-                <?php endif;?>
+                <?php endif?>
 
         </div>
     </div>

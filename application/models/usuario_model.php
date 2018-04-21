@@ -16,7 +16,9 @@
             /* retorna o usuario encontrado*/
             return $user;
         }
-
+        public function buscarUsuarios(){
+            return $this->db->get("usuario")->result_array();
+        }
         public function buscarUsuario($usuario_objeto){
             $user = $this->db->get_where("usuario",array("id"=>$usuario_objeto))->row_array();
             return $user;

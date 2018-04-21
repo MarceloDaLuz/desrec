@@ -24,13 +24,51 @@ class Objeto extends CI_Controller{
         $this->load->model("objeto_model");
         /* Busca do objeto pelo id QUE É PASSADO PELO GET-URL */
         $user = $this->session->userdata("usuario_logado");
-        //$id= $this->input->get("id");
+             //$id= $this->input->get("id");
         $objeto = $this->objeto_model->buscarObjetoPorID($id);
+        //$objeto = $this->criando_um_objeto();
         $dados = array("objeto"=>$objeto);
+        //$dados["objeto"] = $objeto;
+        //$dados["usuario"] = $usuarios;
+        $this->load->model("categorias_model");
+        $this->load->model("usuario_model");
+        $dados["usuario"] = $this->usuario_model->buscarUsuarios();
+        $dados["categoria"] = $this->categorias_model->buscarCategoria();
+
         $this->load->view('paginas/head');
         $this->load->view('paginas/navbar');
         $this->load->view('paginas/Objeto/mostra.php',$dados);
 
+    }
+
+    private function criando_um_objeto(){
+        //primeiro ler todos os models
+        $this->load->model("objeto_model");
+        $this->load->model("usuario_model");
+        $this->load->model("categorias_model");
+
+        //busca os objetos :
+        $objetos = $this->objeto_model->buscarObjeto();
+        //objeto rato 
+        $objeto_rato = array();
+        $categoria = array();
+        $usuario = array();
+        
+        foreach ($objetos as $o) {
+            
+            $objeto_rato = array(
+                'ID' => $o["ID"],
+                'NOME' =>$o["NOME"],
+                'DESCRICAO' =>$o["DESCRICAO"],
+                'VALOR' => $o["VALOR"],
+                'DATAPOST'=>$o["DATAPOST"],
+                'categorias_id' => $categoria,
+                'usuario_id' => $usuario
+            ); 
+        }
+        
+        $clones_exibicao = $objeto_rato;
+        return $clones_exibicao; 
     }
 
     /* ------------------------------------------------------------------------------------------------------------------------------------- */
@@ -104,16 +142,5 @@ class Objeto extends CI_Controller{
         //Redireciona para a pagina de perfil
         redirect("Perfil/autenticado");
 
-    }
-
-    /* METODO PARA BUSCAR O PRODUTO COM NOME DESEJADO */
-    public function buscar(){
-        /* metodo estara alocado no botão buscar da barra de navegação(principalmente) */
-        
-    }
-
-    /* METODO PARA BUSCAR OS OBJETOS DO USUARIO LOGADO */
-    public function meuObjeto(){
-        /* O metodo deve buscar por objeto usuario_id  igual ao id_do_usuario logado*/
     }
 }
